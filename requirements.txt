@@ -1,0 +1,11 @@
+# Core RAG stack (installed/pinned as the syllabus reaches each step)
+anthropic>=0.40
+chromadb>=0.5
+sentence-transformers>=3.0
+numpy>=1.26
+
+# Testing
+pytest>=8.0
+
+# Config
+python-dotenv>=1.0
