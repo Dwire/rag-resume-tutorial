@@ -61,10 +61,10 @@ must never be committed to the public repo.
 
 ### Keeping CLAUDE.md and AGENTS.md in sync
 
-The teaching contract is authored once. Options to avoid drift (decide in planning):
-either (a) `AGENTS.md` is a thin pointer that says "read `CLAUDE.md` — the teaching
-contract there applies to you too," or (b) both files embed the same contract body.
-Preference: (a) — single source of truth, minimal duplication.
+The teaching contract is authored once in `CLAUDE.md`. `AGENTS.md` is a thin pointer:
+it tells a Codex-style agent "read `CLAUDE.md` — the teaching contract there applies to
+you too," plus any Codex-specific notes. Single source of truth, minimal duplication.
+**Decided.**
 
 ## Privacy & secrets safeguards
 
