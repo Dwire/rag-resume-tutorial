@@ -1,0 +1,26 @@
+# --- Personal data: never commit real résumé / experience write-ups ---
+# Ignore everything under documents/ EXCEPT the committed sample + its README.
+documents/*
+!documents/README.md
+!documents/sample-experience.md
+
+# --- Secrets ---
+.env
+
+# --- Vector store (persistent Chroma data, built in later steps) ---
+.chroma/
+chroma/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+env/
+*.egg-info/
+
+# --- OS / editor cruft ---
+.DS_Store
+.idea/
+.vscode/
