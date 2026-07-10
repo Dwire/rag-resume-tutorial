@@ -113,7 +113,7 @@ projects on GitHub and pull your contributions into reference documents you can
 drop in. Point it at your repos and use the prompt below as a starting point.
 
 <details>
-<summary><strong>Example prompt — turn your GitHub history into reference documents</strong></summary>
+<summary><strong>Example prompt — have AI turn your GitHub history into reference documents</strong></summary>
 
 ```text
 You are reviewing GitHub PRs and commits authored by Riley Doe (GitHub: RiDoe).
