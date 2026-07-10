@@ -52,12 +52,24 @@ be able to talk about one credibly. No ML background required.
 
 This repo ships a teaching contract that turns an AI coding agent into a tutor
 that explains before it builds, checkpoints after each step, and quizzes you for
-interviews. If you use one:
+interviews.
 
-- **Claude Code** → it reads `CLAUDE.md` automatically.
+**Getting started is just this:**
+
+1. Clone your copy of the repo and open it in your AI coding agent.
+2. Say something like **"Let's start the course — begin Step 1."**
+3. That's it. The agent picks up the teaching contract and drives the rest: it
+   explains what you're about to build and why, waits for your go-ahead, builds
+   the step, then stops for a review — walking the code, key takeaways, and a
+   short interview quiz — before moving on. **One step per session; it won't run
+   ahead.** You just keep saying "next step" when you're ready.
+
+Which file the agent reads:
+
+- **Claude Code** → reads `CLAUDE.md` automatically. Just open the repo and ask.
 - **Codex / other agents** → point them at `AGENTS.md` (which defers to `CLAUDE.md`).
 
-It's entirely optional — the course stands on its own.
+It's entirely optional — the course stands on its own if you'd rather work solo.
 
 ## Using a different LLM (or no key yet)
 
