@@ -1,6 +1,6 @@
 # Learning Syllabus
 
-The numbered implementation steps. **One step per session** unless the student explicitly asks to continue. Each step follows the teaching contract: planning explanation → go-ahead → build → checkpoint review with interview prep + quiz → update `LEARNING_LOG.md`.
+The numbered implementation steps. **One step per session** unless the student explicitly asks to continue. Each step follows the teaching contract: planning explanation → go-ahead → build → checkpoint review with interview prep + quiz → append Key Takeaways + Q&A to `interview-prep/NN-<topic>.md` → update `LEARNING_LOG.md`.
 
 **Testing rule:** from Step 1 onward, every step's build includes lightweight `pytest` tests for its deterministic parts (chunker boundaries, retriever counts, word-count validators). LLM stages get *output validators and evals* instead of unit tests — knowing that distinction is itself an interview answer.
 
@@ -18,7 +18,7 @@ The numbered implementation steps. **One step per session** unless the student e
 | 9 | **Cover letter generation** | Cover-letter path in the generator: ≤300-word **length** constraint with a word-count validator (retry/trim loop), narrative tailoring to the posting | Length vs. structure constraints, validate-and-retry patterns, tone/narrative control via prompt | "What do you do when the model ignores a constraint?" |
 | 10 | **Evaluation & iteration** | A small eval harness: golden queries ("does a DevOps posting retrieve the K8s project?"), precision/recall@k informally, groundedness spot-checks; experiments with chunk size / k; record findings | Retrieval metrics, groundedness checking, systematic tuning; hybrid search (BM25 + vectors) & rerankers discussed as next steps | "How do you evaluate a RAG system?" — the question that separates tutorial-followers from engineers |
 | 11 | **Simple UI** | `app.py` in Streamlit: paste a posting, click generate, see retrieved chunks (transparency!) and the outputs side by side | Separation of pipeline and presentation; showing retrieval provenance in a UI | Demo material; "how would users trust the output?" |
-| 12 | **Wrap-up: mock interview** | No new code. Full mock interview: architecture walkthrough, deep-dives per stage, trade-off grilling, "what would you change at scale." Produce a 1-page study sheet from the ADRs + log. | Synthesis and retrieval (the human kind) | Everything above, under pressure |
+| 12 | **Wrap-up: mock interview** | No new code. Full mock interview: architecture walkthrough, deep-dives per stage, trade-off grilling, "what would you change at scale." Compile the per-step `interview-prep/` files, ADRs, and log into a single `INTERVIEW_CHEATSHEET.md` at the repo root — architecture-diagram recall, per-stage trade-offs, and the top ~20 Q&A. | Synthesis and retrieval (the human kind) | Everything above, under pressure |
 
 **Ordering logic:** steps 1→9 build the pipeline left to right through the architecture diagram. The vector store is deliberately built by hand (4), *used* for real retrieval (5), and only then replaced by ChromaDB (6) — so the comparison is felt, not read about. Generation is split into resume (structure constraints) and cover letter (length constraints) because the interesting problems differ. Evaluation comes once there's something to evaluate; UI comes last because it teaches no RAG.
 

@@ -46,6 +46,7 @@ Claude acts as **tutor + architect + pair programmer, in that priority order.**
    - The technologies used and what problem each solves
    - **Key Takeaways:** a punchy 3–5 bullet summary the student can reread in 30 seconds before an interview — the quotable version of the whole step, no wading through the full review.
    - **Interview prep:** 3–5 questions an interviewer might ask about this topic, with model answers phrased the way the student should say them. Then quiz the student on 1–2 of them and WAIT for their answers before moving on.
+   - **Save the prep to disk.** After the review, append the step's **Key Takeaways** and the **full interview Q&A with model answers** to `interview-prep/NN-<topic>.md` (matching the step number). This builds a durable, searchable Q&A bank across the course — the chat transcript is not the record; that file is. The live quiz answers stay in the chat, but the questions and model answers must land in the file.
 4. **The end goal is job interviews.** All explanations build toward confidently discussing RAG architecture, trade-offs, and design decisions in a technical interview. When choosing between a shortcut and a teachable pattern, choose the teachable pattern.
 5. **Don't dump code silently.** Annotate the non-obvious parts and point out the 2–3 lines per file that matter most conceptually.
 6. **Wait for the student's go-ahead** between the planning explanation and the implementation, and again before advancing to the next step.
@@ -54,6 +55,7 @@ Claude acts as **tutor + architect + pair programmer, in that priority order.**
 ## Bookkeeping duties (every step)
 
 - **Update `LEARNING_LOG.md`** at the end of every step with: step number and name, date, what was built, key decisions and rationale, concepts covered, quiz results / concepts the student struggled with (revisit these later), and what the next step is.
+- **Append to the interview-prep bank** in `interview-prep/NN-<topic>.md` (see checkpoint item 3): the step's Key Takeaways and the interview Q&A with model answers. This is the student's growing revision deck; Step 12 compiles it into the final cheat sheet.
 - **Write an ADR** in `docs/decisions/` for each significant technology or design choice as it's made — these are the student's interview study notes. Format: short, numbered (`NNNN-title.md`), with Context / Decision / Alternatives considered / Consequences.
 
 ## Foundation documents
@@ -62,4 +64,5 @@ Claude acts as **tutor + architect + pair programmer, in that priority order.**
 - `docs/02-architecture.md` — full system architecture with data-flow diagram; core RAG concepts vs. app plumbing
 - `docs/03-learning-syllabus.md` — the numbered implementation steps we follow
 - `docs/decisions/` — architecture decision records (interview study notes)
+- `interview-prep/` — the growing Q&A bank: one file per step, compiled into the final cheat sheet at Step 12
 - `LEARNING_LOG.md` — session-by-session progress log (read this first, every session)

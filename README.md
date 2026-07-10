@@ -43,9 +43,10 @@ be able to talk about one credibly. No ML background required.
    - `docs/02-architecture.md` — the system and the core RAG concepts
    - `docs/03-learning-syllabus.md` — the numbered steps you'll implement
 4. Work the syllabus one step at a time. Put your own experience write-ups in
-   `documents/` (see `documents/README.md`). Record progress in `LEARNING_LOG.md`
-   and write an ADR in `docs/decisions/` for each significant choice — those are
-   your interview study notes.
+   `documents/` (see `documents/README.md`). Record progress in `LEARNING_LOG.md`,
+   write an ADR in `docs/decisions/` for each significant choice, and let each
+   step's Key Takeaways + interview Q&A collect in `interview-prep/` — that bank
+   compiles into a single `INTERVIEW_CHEATSHEET.md` at the final step.
 
 ### Optional: let an AI agent tutor you
 
@@ -57,6 +58,19 @@ interviews. If you use one:
 - **Codex / other agents** → point them at `AGENTS.md` (which defers to `CLAUDE.md`).
 
 It's entirely optional — the course stands on its own.
+
+## Using a different LLM (or no key yet)
+
+The API key powers **only the generation steps (8–9)**. Everything else is
+key-free:
+
+- **Embeddings run locally** via `sentence-transformers` — no API, no cost. You
+  can complete the entire RAG core (Steps 1–7) with no key at all.
+- **Generation is provider-swappable.** Retrieval hands a finished prompt to
+  `src/generator.py`; that one file is the only place the LLM provider lives.
+  Swap the Claude call for OpenAI, a local model via Ollama, or anything else by
+  editing it — the rest of the pipeline doesn't change. The course uses Claude by
+  default for output quality (see `docs/decisions/`).
 
 ## Improving the course
 
