@@ -48,7 +48,7 @@ be able to talk about one credibly. No ML background required.
    step's Key Takeaways + interview Q&A collect in `interview-prep/` — that bank
    compiles into a single `INTERVIEW_CHEATSHEET.md` at the final step.
 
-### Optional: let an AI agent tutor you
+### Optional: let an AI agent tutor you (Highly Encouraged)
 
 This repo ships a teaching contract that turns an AI coding agent into a tutor
 that explains before it builds, checkpoints after each step, and quizzes you for
