@@ -92,8 +92,8 @@ back up to the template — there's no automatic sync.
 
 ## Why RAG for such a small dataset? (read this)
 
-Be honest about the framing: **RAG is not what you'd normally reach for at this
-scale.** A single person's experience write-ups are a handful of short documents
+**RAG is not what you'd normally reach for at this scale.** A single 
+person's experience write-ups are a handful of short documents
 that fit comfortably inside a modern model's context window — so in production
 you'd most likely **skip retrieval entirely and just put all the documents
 straight into the prompt** (full-context "stuffing"), letting the model read
@@ -122,7 +122,7 @@ drop in. Point it at your repos and use the prompt below as a starting point.
 <summary><strong>Example prompt — turn your GitHub history into reference documents</strong></summary>
 
 ```text
-You are reviewing GitHub PRs and commits authored by Gregory Dwyer (GitHub: Dwire).
+You are reviewing GitHub PRs and commits authored by Riley Doe (GitHub: RiDoe).
 
 Scope:
 - Analyze merged PRs and commits only
