@@ -84,13 +84,7 @@ key-free:
   editing it — the rest of the pipeline doesn't change. The course uses Claude by
   default for output quality (see `docs/decisions/`).
 
-## Improving the course
-
-Found a bug in the syllabus or docs? Open an issue or PR against the **template**
-repo. If you're working in your private copy, fix it there and copy the change
-back up to the template — there's no automatic sync.
-
-## Why RAG for such a small dataset? (read this)
+## Why RAG for such a small dataset?
 
 **RAG is not what you'd normally reach for at this scale.** A single 
 person's experience write-ups are a handful of short documents
@@ -188,6 +182,11 @@ Do NOT:
 > **Note:** the example prompt names a specific GitHub user — swap in your own
 > name and username before running it.
 
+## Improving the course
+
+Found a bug in the syllabus or docs? Open an issue or PR against the **template**
+repo. If you're working in your private copy, fix it there and copy the change
+back up to the template — there's no automatic sync.
 ## License
 
 MIT — see `LICENSE`.
