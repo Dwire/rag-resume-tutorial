@@ -90,6 +90,104 @@ Found a bug in the syllabus or docs? Open an issue or PR against the **template*
 repo. If you're working in your private copy, fix it there and copy the change
 back up to the template — there's no automatic sync.
 
+## Why RAG for such a small dataset? (read this)
+
+Be honest about the framing: **RAG is not what you'd normally reach for at this
+scale.** A single person's experience write-ups are a handful of short documents
+that fit comfortably inside a modern model's context window — so in production
+you'd most likely **skip retrieval entirely and just put all the documents
+straight into the prompt** (full-context "stuffing"), letting the model read
+everything at once. Retrieval only starts earning its keep when the corpus grows
+past what you can afford to send every call — more documents than fit the window,
+or where sending them all gets slow or expensive.
+
+So why build RAG here? **Because the goal of this course is understanding, not the
+app.** It's designed to make you fluent enough in RAG — chunking, embeddings,
+vector similarity, retrieval strategy, grounding, evaluation — to discuss it
+confidently in an interview. Building a small, honest system around a real,
+useful task (tailoring your own job-application materials) gives you something
+concrete to reason about and demo, without a corpus so large it becomes a
+distraction. Knowing *when RAG is and isn't the right tool* — and being able to
+say "for a dataset this small I'd just stuff the context; RAG matters once you
+outgrow the window" — is itself one of the sharper answers you can give.
+
+## Not enough reference documents?
+
+The pipeline is only as good as what's in `documents/`. If you don't have enough
+written up, ask an AI assistant to comb through your personal or professional
+projects on GitHub and pull your contributions into reference documents you can
+drop in. Point it at your repos and use the prompt below as a starting point.
+
+<details>
+<summary><strong>Example prompt — turn your GitHub history into reference documents</strong></summary>
+
+```text
+You are reviewing GitHub PRs and commits authored by Gregory Dwyer (GitHub: Dwire).
+
+Scope:
+- Analyze merged PRs and commits only
+- Focus on production-impacting work (features, architecture, performance, reliability, DX)
+- Ignore trivial changes (formatting, renames, dependency bumps unless meaningful)
+
+Output FIVE sections in this exact order:
+
+1. TECHNOLOGY LIST
+   - languages
+   - frameworks
+   - tools
+   - packages
+   - Only list technologies that I used and implemented. Do NOT include additional dependencies.
+
+2. DETAILED CONTRIBUTIONS
+   - List major contributions grouped by feature or system
+   - For each item include:
+     - PR or commit ID
+     - Repo name
+     - What was built or changed
+     - Why it mattered (problem solved)
+     - Any technical complexity (state mgmt, async flows, infra, migrations, etc.)
+
+3. EXECUTIVE BULLET SUMMARY
+   - 6–10 concise bullets summarizing overall contribution themes
+   - No PR numbers
+   - Focus on outcomes and ownership
+
+4. INTERVIEW-READY NARRATIVE
+   - One tight paragraph
+   - Written in first person
+   - Emphasize decision-making, tradeoffs, and impact
+   - Assume interviewer cannot see the code
+
+5. RESUME-READY BULLET POINTS (MOST IMPORTANT)
+   - Produce 6–10 bullets suitable for a mid → senior software engineer resume
+   - Each bullet MUST:
+     - Start with a strong action verb
+     - Describe a concrete technical contribution
+     - Include scope, scale, or impact where inferable (users, performance, reliability, dev velocity)
+     - Be ≤ 2 lines each
+     - Avoid internal jargon, repo names, or PR numbers
+   - Prioritize:
+     - Architecture & system design
+     - Production features shipped
+     - Performance/reliability improvements
+     - Cross-cutting work reused across features
+     - Leadership or ownership signals (even without direct reports)
+
+If impact metrics are not explicit in the code, infer conservatively and state impact
+qualitatively (e.g., "improved reliability," "reduced complexity," "unblocked feature
+development").
+
+Do NOT:
+- Invent metrics
+- Use filler language
+- Repeat the same contribution across bullets
+```
+
+</details>
+
+> **Note:** the example prompt names a specific GitHub user — swap in your own
+> name and username before running it.
+
 ## License
 
 MIT — see `LICENSE`.
