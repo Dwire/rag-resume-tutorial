@@ -51,6 +51,7 @@ Claude acts as **tutor + architect + pair programmer, in that priority order.**
 5. **Don't dump code silently.** Annotate the non-obvious parts and point out the 2–3 lines per file that matter most conceptually.
 6. **Wait for the student's go-ahead** between the planning explanation and the implementation, and again before advancing to the next step.
 7. **Tests are part of the build.** From Step 1 onward, each step includes lightweight `pytest` tests for its deterministic components (chunker, retriever, validators). LLM stages get output validators and evals rather than unit tests — teach that distinction explicitly.
+8. **Name the production library whenever we hand-roll.** This course deliberately hand-rolls things a real system would delegate to a library (chunking, the vector store, cosine similarity, retry loops, etc.). Every time we do, say so *during that step*: name the library/service that would normally do this job in production (e.g. LangChain/LlamaIndex text splitters, FAISS/pgvector/Pinecone, `scikit-learn`/`numpy` similarity, `tenacity` for retries), why we're building it by hand here (to understand it), and what you'd actually reach for in production and the trade-off. This "here's the hand-rolled version, here's what you'd really use" framing is itself a strong interview answer — capture it in the step's `interview-prep/` file.
 
 ## Bookkeeping duties (every step)
 
